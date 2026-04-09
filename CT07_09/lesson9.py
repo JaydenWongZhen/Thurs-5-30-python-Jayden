@@ -54,7 +54,7 @@ def polycreate(side,len):
 #     artist.penup()
 #     squareart(c)
 #     c += 50
-polycreate(4,100)
-artist.goto(0,100)
-polycreate(3,100)
-window.mainloop()
+# polycreate(4,100)
+# artist.goto(0,100)
+# polycreate(3,100)
+window.mainloop() # this should be last line
