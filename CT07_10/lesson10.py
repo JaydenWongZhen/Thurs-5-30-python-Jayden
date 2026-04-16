@@ -38,18 +38,44 @@
 #     return g
 # h=tasques(2,5)
 # print(h)
+wide=300
+high=600
+randomlistofcolor=["pink","orange","lime","cyan","brown","navy","red"]
 import turtle
+import random
 def start(sw,sh):
     window = turtle.Screen()
     window.setup(width=sw,height=sh)
     return window
-s=start(300,600)
+s=start(wide,high)
 def makegooby():
     nam=turtle.Turtle()
     nam.shape("square")
     nam.color("cyan")
     return nam
 g = makegooby()
-g.penup()
-g.forward(100)
+# g.penup()
+
+x = 5
+y = 4
+
+def moving(n,vex,vey):
+    n.setx(n.xcor()+vex)
+    n.sety(n.ycor()+vey)
+def detectx(n,wide):
+    if n.xcor() > wide/2 or n.xcor() < -wide/2:
+        return True
+def detecty(n,high):
+    if n.ycor() > high/2 or n.ycor() < -high/2:
+        return True
+while True:
+    moving(g,x,y)
+    if detectx(g,wide) == True:
+        #x=random.randint(1,10)
+        x*= -1
+        g.color(random.choice(randomlistofcolor))
+    if detecty(g,high) == True:
+        #y=random.randint(1,10)
+        y*= -1
+        g.color(random.choice(randomlistofcolor))
 s.mainloop()
